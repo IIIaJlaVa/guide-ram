@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Памятка по выбору оперативной памяти</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f7fb;
+            color: #1a2639;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #0b2b4f;
+            margin-bottom: 8px;
+            border-left: 6px solid #2b7a78;
+            padding-left: 20px;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #3a506b;
+            margin-bottom: 40px;
+            margin-top: 10px;
+            padding-left: 26px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #0b2b4f;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px solid #def2f1;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2b7a78;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .glossary {
+            background: #f0f6fa;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .glossary p {
+            margin-bottom: 12px;
+        }
+
+        .glossary strong {
+            color: #0b2b4f;
+            font-weight: 600;
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .task-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #e1eaf2;
+            transition: transform 0.2s;
+        }
+
+        .task-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(43, 122, 120, 0.1);
+            border-color: #b3d9d8;
+        }
+
+        .task-card ul {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+
+        .task-card li {
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .task-card li::before {
+            content: "•";
+            color: #2b7a78;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -6px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #def2f1;
+            color: #0b2b4f;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 40px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .spec-list {
+            background: #f9fcff;
+            border-radius: 14px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .spec-item {
+            display: flex;
+            margin-bottom: 8px;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            min-width: 100px;
+            color: #1e3b5c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f9fcff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.03);
+            margin: 25px 0;
+        }
+
+        th {
+            background: #1e3b5c;
+            color: white;
+            font-weight: 500;
+            padding: 14px 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #d4e3ed;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            background: #eaf2f9;
+            font-weight: 500;
+        }
+
+        .rule-list {
+            background: #f5e9e0;
+            border-radius: 18px;
+            padding: 25px 30px;
+            margin: 30px 0 15px;
+            border-left: 6px solid #b15e5e;
+        }
+
+        .rule-list h3 {
+            color: #a13d3d;
+            margin-top: 0;
+        }
+
+        .rule-list ol {
+            padding-left: 20px;
+        }
+
+        .rule-list li {
+            margin-bottom: 10px;
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #cbdae6;
+            text-align: center;
+            color: #5f7d9c;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 16px; }
+            h1 { font-size: 1.8rem; }
+            .glossary strong { min-width: 80px; }
+            .card-grid { grid-template-columns: 1fr; }
+            table { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🧠 Памятка по выбору оперативной памяти</h1>
+    <div class="subhead">Характеристики, сценарии использования, объёмы и правила</div>
+
+    <!-- Краткий словарь характеристик -->
+    <section>
+        <h2>📋 Краткий словарь характеристик</h2>
+        <div class="glossary">
+            <p><strong>Форм-фактор:</strong> DIMM (для ПК) / SO‑DIMM (для ноутбуков).</p>
+            <p><strong>Поколение (DDR):</strong> Сейчас актуальны DDR4 и DDR5. Они несовместимы между собой.</p>
+            <p><strong>Объём (ГБ):</strong> Сколько данных и программ может одновременно хранить память.</p>
+            <p><strong>Частота (МГц):</strong> Скорость обмена данными с процессором.</p>
+            <p><strong>Тайминги (CL):</strong> Задержки ответа. Меньше = быстрее (например, CL16 лучше, чем CL18).</p>
+            <p><strong>Ранговость:</strong> Single‑Rank (чипы с одной стороны) часто быстрее в играх, Dual‑Rank даёт небольшой прирост в производительности, но тяжелее разгоняется.</p>
+        </div>
+    </section>
+
+    <!-- Памятка по выбору для разных задач -->
+    <section>
+        <h2>💻 Выбор под вашу задачу</h2>
+        <div class="card-grid">
+            <!-- Офисный ПК -->
+            <div class="task-card">
+                <h3>🖥️ Офисный / Для интернета</h3>
+                <div class="spec-list">
+                    <div class="spec-item"><span class="spec-label">Объём:</span> 8 ГБ (минимум), 16 ГБ (оптимум)</div>
+                    <div class="spec-item"><span class="spec-label">Тип:</span> DDR4</div>
+                    <div class="spec-item"><span class="spec-label">Частота:</span> 2400–2666 МГц</div>
+                </div>
+                <p><span class="badge">Совет</span> Можно 1 плашку, но лучше 2 (двухканальный режим) для отзывчивости. Не переплачивайте.</p>
+            </div>
+            <!-- Игровой ПК -->
+            <div class="task-card">
+                <h3>🎮 Игровой компьютер</h3>
+                <div class="spec-list">
+                    <div class="spec-item"><span class="spec-label">Объём:</span> 16 ГБ (стандарт), 32 ГБ (для стримов/4К)</div>
+                    <div class="spec-item"><span class="spec-label">Тип:</span> DDR4 или DDR5 (под платформу)</div>
+                    <div class="spec-item"><span class="spec-label">Частота:</span> Intel: 3200 / 5600–6000; AMD: 3600 (AM4) / 6000 CL30 (AM5)</div>
+                    <div class="spec-item"><span class="spec-label">Тайминги:</span> CL16–18 (DDR4), CL30–34 (DDR5)</div>
+                </div>
+                <p><span class="badge">Важно</span> Строго двухканальный режим (2 модуля). Для AMD (AM4) идеальна частота 3600 МГц.</p>
+            </div>
+            <!-- Рабочая станция -->
+            <div class="task-card">
+                <h3>🎬 Рабочая станция (монтаж, 3D, CAD)</h3>
+                <div class="spec-list">
+                    <div class="spec-item"><span class="spec-label">Объём:</span> 32 ГБ (старт), 64–128 ГБ (профи)</div>
+                    <div class="spec-item"><span class="spec-label">Тип:</span> DDR4 / DDR5, возможна ECC (под серверные CPU)</div>
+                    <div class="spec-item"><span class="spec-label">Приоритет:</span> Объём важнее частоты</div>
+                </div>
+                <p><span class="badge">Совет</span> В профессиональном софте выигрыш от большего количества каналов: заполняйте все слоты.</p>
+            </div>
+            <!-- Сервер -->
+            <div class="task-card">
+                <h3>⚙️ Сервер / 24/7</h3>
+                <div class="spec-list">
+                    <div class="spec-item"><span class="spec-label">Тип:</span> Только ECC (Registered/Unbuffered)</div>
+                    <div class="spec-item"><span class="spec-label">Объём:</span> От 32 ГБ до терабайтов</div>
+                </div>
+                <p><span class="badge">Критично</span> ECC память исправляет ошибки, обеспечивая стабильность и целостность данных.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Таблица сводка по объёму -->
+    <section>
+        <h2>📊 Таблица: оптимальный объём памяти</h2>
+        <table>
+            <thead>
+                <tr><th>Объём</th><th>Для каких задач</th><th>Статус в 2025–2026</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>4–8 ГБ</td><td>Офис, старая Windows 10, хромбуки</td><td>Минимум для выживания. Windows 11 будет тормозить.</td></tr>
+                <tr class="highlight"><td>16 ГБ</td><td>Игры, браузер с кучей вкладок, начальный фотошоп</td><td>Золотой стандарт. Хватит большинству.</td></tr>
+                <tr><td>32 ГБ</td><td>Современные ААА‑игры, проф. монтаж, виртуалки</td><td>Оптимальный выбор для энтузиаста. Запас на годы.</td></tr>
+                <tr><td>64 ГБ+</td><td>8K видео, научные расчёты, игровые сервера</td><td>Профессиональный сегмент.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Главные правила при покупке -->
+    <section>
+        <h2>✅ Главные правила при покупке</h2>
+        <div class="rule-list">
+            <h3>📌 Три золотых правила</h3>
+            <ol>
+                <li><strong>Комплектность (Kit):</strong> Покупайте готовый комплект из двух (или четырёх) планок в одной коробке. Так они точно будут работать вместе.</li>
+                <li><strong>QVL (список совместимости):</strong> Проверьте на сайте производителя материнской платы, есть ли ваша модель памяти в списке рекомендованных (QVL). Тогда она гарантированно запустится на заявленной частоте.</li>
+                <li><strong>XMP / EXPO:</strong> После установки высокочастотной памяти не забудьте в BIOS включить профиль <strong>XMP</strong> (Intel) или <strong>EXPO</strong> (AMD), чтобы она работала на паспортной частоте, а не на базовой.</li>
+            </ol>
+        </div>
+        <p style="margin-top: 10px; font-style: italic; color: #2b4f6e;">⚡️ Две отдельные планки даже одной модели могут конфликтовать — всегда берите комплект.</p>
+    </section>
+
+    <!-- Небольшой footer -->
+    <div class="footer-note">
+        🧾 Памятка составлена на основе актуальных рекомендаций 2025–2026 года. Информация собрана в удобный формат для быстрого выбора ОЗУ.
+    </div>
+</div>
+</body>
+</html>
